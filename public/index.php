@@ -5,6 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scaffolding</title>
+
+    <script>
+        window.customElements.define('x-svelte', class extends HTMLElement {});
+    </script>
+
     <?php echo entry('app', true); ?>
 </head>
 <body class="grid place-items-center h-vh-100">

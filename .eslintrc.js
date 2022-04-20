@@ -21,7 +21,7 @@ module.exports = {
     ],
     settings: {
         'html/indent': '+4',
-        'html/html-extensions': [ '.html' ],
+        'html/html-extensions': [ '.html', '.php' ],
         'svelte3/ignore-styles': () => true
     },
     rules: {
