@@ -1,0 +1,10 @@
+/.env
+/.idea
+/.vscode
+/.cache
+/vendor
+/.DS_Store
+/node_modules
+/public/static
+/package-lock.json
+/yarn.lock

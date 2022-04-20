@@ -1,0 +1,21 @@
+{
+    "scripts": {
+        "dev": "webpack --mode=development --watch",
+        "build": "webpack --mode=production"
+    },
+    "devDependencies": {
+        "autoprefixer": "^10.4.2",
+        "brightpack": "ssh://git@github.com:mostlyserious/brightpack.git#dev",
+        "eslint": "^7.2.0",
+        "eslint-config-airbnb-base": "^14.2.0",
+        "eslint-plugin-html": "^6.0.2",
+        "eslint-plugin-svelte3": "^2.7.3",
+        "eslint-plugin-vue": "^6.2.2",
+        "postcss": "^8.4.6",
+        "postcss-functions": "^4.0.2",
+        "postcss-import": "^14.0.2",
+        "postcss-loader": "^6.2.1",
+        "postcss-preset-env": "^7.3.1",
+        "tailwindcss": "^3.0.19"
+    }
+}

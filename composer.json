@@ -1,0 +1,10 @@
+{
+    "autoload": {
+        "files": [
+            "lib/helpers.php"
+        ]
+    },
+    "require": {
+
+    }
+}
