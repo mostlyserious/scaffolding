@@ -1,3 +1,5 @@
+import { detach, insert, noop } from 'svelte/internal';
+
 export default els => {
     const store = () => import('./store' /* webpackChunkName: 'store' */);
     const components = {
@@ -13,16 +15,64 @@ export default els => {
                 request(),
                 store()
             ]).then(([ { default: Component }, { default: store } ]) => {
-                const slot = target.innerHTML.replace(/<\/?template[^>]*>/, '').trim();
+                const slotElements = target.querySelectorAll('template');
+                const slots = {};
+
+                slotElements.forEach(el => {
+                    const name = el.getAttribute('slot');
+
+                    slots[name ? name : 'default'] = el.content;
+                });
 
                 target.innerHTML = '';
                 new Component({
                     target,
                     store,
-                    intro: true,
-                    props: { slot, ...target.dataset }
+                    props: {
+                        ...target.dataset,
+                        $$slots: createSlots(slots),
+                        $$scope: {}
+                    }
                 });
             });
         }
     });
 };
+
+function createSlots(templates) {
+    const slots = {};
+
+    for (const name in templates) {
+        if (templates.hasOwnProperty(name)) {
+            slots[name] = [ createSlot(templates[name]) ];
+        }
+    }
+
+    function createSlot(element) {
+        const nodes = [ ...element.childNodes ];
+
+        return function() {
+            return {
+                c: noop,
+
+                m: function mount(target, anchor) {
+                    Array.prototype.forEach.call(nodes, node => {
+                        insert(target, node, anchor);
+                    });
+                },
+
+                d: function destroy(detaching) {
+                    if (detaching) {
+                        Array.prototype.forEach.call(nodes, node => {
+                            detach(node);
+                        });
+                    }
+                },
+
+                l: noop
+            };
+        };
+    }
+
+    return slots;
+}
