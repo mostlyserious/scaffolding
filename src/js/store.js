@@ -1,4 +1,5 @@
 import { writable } from 'svelte/store';
+import throttle from './modules/throttle';
 
 export const screen = writable({
     is2xs: matchMedia('(min-width: 380px)').matches,
