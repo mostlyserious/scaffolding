@@ -31,17 +31,17 @@ module.exports = brightpack({ dest, publicPath, watch }, config => {
     //     config: path.resolve('src/favicon/config.json')
     // }));
 
-    config.cache = {
-        type: 'filesystem',
-        cacheDirectory: path.resolve(__dirname, '.cache/webpack'),
-        buildDependencies: {
-            config: [
-                __filename,
-                path.resolve(__dirname, 'babel.config.js'),
-                path.resolve(__dirname, 'postcss.config.js')
-            ]
-        }
-    };
+    // config.cache = {
+    //     type: 'filesystem',
+    //     cacheDirectory: path.resolve(__dirname, '.cache/webpack'),
+    //     buildDependencies: {
+    //         config: [
+    //             __filename,
+    //             path.resolve(__dirname, 'babel.config.js'),
+    //             path.resolve(__dirname, 'postcss.config.js')
+    //         ]
+    //     }
+    // };
 
     if (global.inProduction) {
 
