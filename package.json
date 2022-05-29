@@ -5,7 +5,7 @@
     },
     "devDependencies": {
         "autoprefixer": "^10.4.2",
-        "brightpack": "ssh://git@github.com:mostlyserious/brightpack.git#dev",
+        "brightpack": "ssh://git@github.com:mostlyserious/brightpack.git#6.0.0",
         "eslint": "^7.2.0",
         "eslint-config-airbnb-base": "^14.2.0",
         "eslint-plugin-html": "^6.0.2",
