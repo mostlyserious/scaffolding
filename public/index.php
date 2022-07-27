@@ -10,7 +10,7 @@
         window.customElements.define('x-svelte', class extends HTMLElement {});
     </script>
 
-    <?php echo entry('app', true); ?>
+    <?php echo vite(); ?>
 </head>
 <body class="grid place-items-center h-vh-100">
     <h1 class="text-5xl">Hello, world.</h1>

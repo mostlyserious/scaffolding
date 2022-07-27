@@ -1,3 +1,7 @@
+import '../css/main.css';
+
+import.meta.glob('../{img,font,media}/**.*');
+
 (ready => {
     if (document.readyState !== 'loading') {
         ready();
@@ -6,7 +10,7 @@
     }
 })(() => {
     const modules = {
-        'x-svelte': () => import('./svelte' /* webpackChunkName: 'svelte' */)
+        'x-svelte': () => import('./svelte')
     };
 
     Object.keys(modules).forEach(selector => {
@@ -31,6 +35,6 @@
 
     Array.prototype.forEach.call(
         document.querySelectorAll('[target=_blank]'),
-        el => el.setAttribute('rel', 'noreferrer noopener')
+        el => el.setAttribute('rel', 'noopener')
     );
 });
