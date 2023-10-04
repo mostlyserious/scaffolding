@@ -1,12 +1,8 @@
-const plugin = require('tailwindcss/plugin');
-const typography = require('@tailwindcss/typography');
-const { inset } = require('@mostlyserious/tailwindcss-util');
-const { clamp } = require('@mostlyserious/tailwindcss-util');
-const { viewport } = require('@mostlyserious/tailwindcss-util');
-const { textStroke } = require('@mostlyserious/tailwindcss-util');
-const { stateVariant } = require('@mostlyserious/tailwindcss-util');
+import plugin from 'tailwindcss/plugin';
+import typography from '@tailwindcss/typography';
+import * as util from '@mostlyserious/tailwindcss-util';
 
-module.exports = {
+export default {
     content: [
         'src/js/**/*.{js,vue,svelte}',
         'public/**/*.{php,html}'
@@ -77,12 +73,12 @@ module.exports = {
         }
     },
     plugins: [
-        inset,
-        clamp,
-        viewport,
-        textStroke,
         typography,
-        stateVariant('active'),
+        util.inset,
+        util.clamp,
+        util.viewport,
+        util.textStroke,
+        util.stateVariant('active'),
         plugin(({ matchUtilities, addComponents, addUtilities, theme }) => {
             addUtilities({
                 '.appearance-none': {

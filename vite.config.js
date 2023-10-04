@@ -1,11 +1,9 @@
 import vitepack from '@mostlyserious/vitepack';
 
-const args = {
+export default vitepack({
     base: '/static/',
     outDir: 'public/static'
-};
-
-export default vitepack(args, config => {
+}, config => {
     config.build.rollupOptions = {
         input: 'src/js/main.js'
     };

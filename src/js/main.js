@@ -1,6 +1,6 @@
 import '../css/main.css';
 
-import.meta.glob('../{img,font,media}/**.*');
+import.meta.glob('../{img,font,media}/**/*');
 
 (ready => {
     if (document.readyState !== 'loading') {
